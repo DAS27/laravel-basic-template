@@ -40,10 +40,7 @@ class IlluminateTransaction implements TransactionInterface
     }
 
     /**
-     * @param Closure $callback
      * @param int $attempts
-     *
-     * @return mixed
      * @throws Throwable
      */
     public function transaction(Closure $callback, $attempts = 1): mixed

@@ -25,8 +25,6 @@ class AbstractStringableModel extends AbstractModel
 
     /**
      * Возвращает идентификатор.
-     *
-     * @return string
      */
     public function getId(): string
     {
