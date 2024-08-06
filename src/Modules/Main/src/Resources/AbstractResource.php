@@ -10,7 +10,7 @@ use Illuminate\Contracts\Support\Arrayable;
 abstract class AbstractResource implements Arrayable
 {
     protected function formatDate(
-        Carbon $carbon = null,
+        ?Carbon $carbon = null,
         string $format = DATE_RFC3339
     ): ?string {
         return $carbon?->format($format);

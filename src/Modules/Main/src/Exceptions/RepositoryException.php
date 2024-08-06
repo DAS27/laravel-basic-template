@@ -6,6 +6,4 @@ namespace MyProject\Main\Exceptions;
 
 use Exception;
 
-class RepositoryException extends Exception
-{
-}
+final class RepositoryException extends Exception {}

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace MyProject\Core\JobDispatcher;
 
-use DateTime;
 use Illuminate\Contracts\Bus\Dispatcher;
 
 final class LaravelJobDispatcher implements JobDispatcherInterface
@@ -21,12 +20,12 @@ final class LaravelJobDispatcher implements JobDispatcherInterface
         $this->dispatcher->dispatch($job);
     }
 
-    public function dispatchIntDelay(BaseJob $job, int $delay = null): void
+    public function dispatchIntDelay(BaseJob $job, ?int $delay = null): void
     {
         $this->dispatcher->dispatch($job->delay($delay));
     }
 
-    public function dispatchDateTimeDelay(BaseJob $job, DateTime $delay = null): void
+    public function dispatchDateTimeDelay(BaseJob $job, ?\DateTimeImmutable $delay = null): void
     {
         $this->dispatcher->dispatch($job->delay($delay));
     }

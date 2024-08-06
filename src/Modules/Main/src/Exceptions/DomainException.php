@@ -6,6 +6,4 @@ namespace MyProject\Main\Exceptions;
 
 use Exception;
 
-class DomainException extends Exception
-{
-}
+final class DomainException extends Exception {}

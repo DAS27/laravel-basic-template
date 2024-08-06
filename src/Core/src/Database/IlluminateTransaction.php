@@ -9,13 +9,18 @@ use Illuminate\Database\ConnectionInterface;
 use MyProject\Core\Database\Contracts\TransactionInterface;
 use Throwable;
 
-class IlluminateTransaction implements TransactionInterface
+final class IlluminateTransaction implements TransactionInterface
 {
     private ConnectionInterface $connection;
 
     public function __construct(ConnectionInterface $connection)
     {
         $this->connection = $connection;
+    }
+
+    public function __destruct()
+    {
+        $this->rollback();
     }
 
     public function begin(): TransactionInterface
@@ -40,7 +45,7 @@ class IlluminateTransaction implements TransactionInterface
     }
 
     /**
-     * @param int $attempts
+     * @param  int  $attempts
      * @throws Throwable
      */
     public function transaction(Closure $callback, $attempts = 1): mixed
@@ -49,10 +54,5 @@ class IlluminateTransaction implements TransactionInterface
             $callback,
             $attempts
         );
-    }
-
-    public function __destruct()
-    {
-        $this->rollback();
     }
 }

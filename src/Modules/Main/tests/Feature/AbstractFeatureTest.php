@@ -7,7 +7,7 @@ namespace MyProject\Main\Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
-class AbstractFeatureTest extends TestCase
+final class AbstractFeatureTest extends TestCase
 {
     use DatabaseTransactions;
 }

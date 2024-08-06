@@ -7,7 +7,7 @@ namespace MyProject\Main\Models;
 /**
  * @property string $id
  */
-class AbstractStringableModel extends AbstractModel
+final class AbstractStringableModel extends AbstractModel
 {
     /**
      * Признак нужно ли использовать автоинкремент для ID.
@@ -31,4 +31,3 @@ class AbstractStringableModel extends AbstractModel
         return $this->getKey();
     }
 }
-

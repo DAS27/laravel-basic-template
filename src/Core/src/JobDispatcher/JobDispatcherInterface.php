@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace MyProject\Core\JobDispatcher;
 
-use DateTime;
-
 interface JobDispatcherInterface
 {
     public function dispatch(BaseJob $job): void;
 
-    public function dispatchIntDelay(BaseJob $job, int $delay = null): void;
+    public function dispatchIntDelay(BaseJob $job, ?int $delay = null): void;
 
-    public function dispatchDateTimeDelay(BaseJob $job, DateTime $delay = null): void;
+    public function dispatchDateTimeDelay(BaseJob $job, ?\DateTimeImmutable $delay = null): void;
 }

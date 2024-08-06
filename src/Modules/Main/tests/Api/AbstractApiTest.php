@@ -7,12 +7,9 @@ namespace MyProject\Main\Tests\Api;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
-
-class AbstractApiTest extends TestCase
+final class AbstractApiTest extends TestCase
 {
     use DatabaseTransactions;
 
-    protected function createUserAndToken(): string
-    {
-    }
+    protected function createUserAndToken(): string {}
 }

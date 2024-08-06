@@ -7,7 +7,7 @@ namespace MyProject\Core\Redis\Providers;
 use Illuminate\Support\ServiceProvider;
 use Predis\Client;
 
-class RedisServiceProvider extends ServiceProvider
+final class RedisServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

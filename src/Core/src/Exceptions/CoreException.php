@@ -6,6 +6,4 @@ namespace MyProject\Core\Exceptions;
 
 use Exception;
 
-class CoreException extends Exception
-{
-}
+final class CoreException extends Exception {}

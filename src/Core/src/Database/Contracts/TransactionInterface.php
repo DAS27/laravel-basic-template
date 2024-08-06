@@ -26,8 +26,7 @@ interface TransactionInterface
     /**
      * Оборачивает в транзакцию выполнение пользовательского кода.
      *
-     * @param int $attempts
-     *
+     * @param  int  $attempts
      */
     public function transaction(Closure $callback, $attempts = 1): mixed;
 }

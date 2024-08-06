@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use MyProject\Core\Database\Contracts\TransactionInterface;
 use MyProject\Core\Database\IlluminateTransaction;
 
-class DatabaseServiceProvider extends ServiceProvider
+final class DatabaseServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

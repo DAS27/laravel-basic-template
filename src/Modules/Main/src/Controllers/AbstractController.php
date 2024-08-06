@@ -15,13 +15,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 abstract class AbstractController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests;
+    use DispatchesJobs;
+    use ValidatesRequests;
 
     /**
      * Success response method.
      *
-     * @param int                              $flags json_encode() $flags, such as JSON_FORCE_OBJECT
-     *
+     * @param  int  $flags  json_encode() $flags, such as JSON_FORCE_OBJECT
      */
     public function sendResponse(array|Arrayable|JsonSerializable $result, int $status = Response::HTTP_OK, int $flags = 0): JsonResponse
     {
@@ -35,8 +36,6 @@ abstract class AbstractController extends Controller
 
     /**
      * Return error response.
-     *
-     *
      */
     public function sendError(string $code, string $message, array $errors = [], int $status = Response::HTTP_INTERNAL_SERVER_ERROR): JsonResponse
     {

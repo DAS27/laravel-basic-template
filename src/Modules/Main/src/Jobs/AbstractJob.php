@@ -45,7 +45,7 @@ abstract class AbstractJob extends BaseJob
                     'message' => $exception->getMessage(),
                     'code' => $exception->getCode(),
                     'trace' => $exception->getTraceAsString(),
-                ]
+                ],
             ]
         );
     }

@@ -9,7 +9,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 abstract class AbstractJsonResponse
 {
     protected int $code = 200;
+
     protected array $headers = [];
+
     protected string $wrapKey = 'data';
 
     public function toResponse(): JsonResponse
@@ -19,9 +21,9 @@ abstract class AbstractJsonResponse
             $data = null;
             $this->code = 204;
         }
+
         return new JsonResponse($data, $this->code, $this->headers);
     }
 
     abstract public function getContent(): array;
 }
-
