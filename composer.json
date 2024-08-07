@@ -54,12 +54,16 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
-        "rector": "vendor/bin/rector process",
-        "rector-check": "vendor/bin/rector process --dry-run",
+        "deptrac": "vendor/bin/deptrac",
+        "deptracapp": "vendor/bin/deptrac analyze --config-file=deptrac.app.yaml  --cache-file=var/.deptrac.app.cache",
+        "lint": "vendor-bin/phplint/vendor/overtrue/phplint/bin/phplint --no-cache",
         "phpcs": "./vendor/bin/pint",
         "phpcs-check": "./vendor/bin/pint --test",
         "phpstan": "./vendor/bin/phpstan analyse",
-        "lint": "vendor-bin/phplint/vendor/overtrue/phplint/bin/phplint --no-cache"
+        "rector": "vendor/bin/rector process",
+        "rector-check": "vendor/bin/rector process --dry-run",
+        "test": "./vendor/bin/phpunit --colors=always",
+        "unused": "vendor/bin/composer-unused"
     },
     "extra": {
         "laravel": {
