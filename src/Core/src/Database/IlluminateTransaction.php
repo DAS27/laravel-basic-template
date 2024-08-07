@@ -9,14 +9,9 @@ use Illuminate\Database\ConnectionInterface;
 use MyProject\Core\Database\Contracts\TransactionInterface;
 use Throwable;
 
-final class IlluminateTransaction implements TransactionInterface
+final readonly class IlluminateTransaction implements TransactionInterface
 {
-    private ConnectionInterface $connection;
-
-    public function __construct(ConnectionInterface $connection)
-    {
-        $this->connection = $connection;
-    }
+    public function __construct(private ConnectionInterface $connection) {}
 
     public function __destruct()
     {

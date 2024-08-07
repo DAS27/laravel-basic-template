@@ -21,6 +21,7 @@
         "nunomaduro/collision": "^8.0",
         "phpstan/phpstan": "^1.11",
         "phpunit/phpunit": "^11.0.1",
+        "qossmic/deptrac": "^2.0",
         "rector/rector": "^1.2",
         "spatie/laravel-ignition": "^2.4"
     },
@@ -54,8 +55,8 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
-        "deptrac": "vendor/bin/deptrac",
-        "deptracapp": "vendor/bin/deptrac analyze --config-file=deptrac.app.yaml  --cache-file=var/.deptrac.app.cache",
+        "deptrac-layers": "vendor/bin/deptrac analyze --config-file=deptrac-layers.yaml  --cache-file=var/.deptrac.layers.cache",
+        "deptrac-app": "vendor/bin/deptrac analyze --config-file=deptrac-app.yaml  --cache-file=var/.deptrac.app.cache",
         "lint": "vendor-bin/phplint/vendor/overtrue/phplint/bin/phplint --no-cache",
         "phpcs": "./vendor/bin/pint",
         "phpcs-check": "./vendor/bin/pint --test",

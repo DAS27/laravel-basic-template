@@ -1,0 +1,14 @@
+parameters:
+  paths:
+    - ./src/Modules
+  exclude_files:
+    - '#.*test.*#'
+  layers:
+    - name: Main
+      collectors:
+        - type: bool
+          must:
+            - type: className
+              value: .*src\\Main\\.*
+  ruleset:
+    Main:

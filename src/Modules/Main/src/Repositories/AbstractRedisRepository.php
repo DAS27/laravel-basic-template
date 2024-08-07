@@ -8,10 +8,7 @@ use Predis\Client;
 
 abstract class AbstractRedisRepository
 {
-    protected Client $client;
-
-    public function __construct(Client $client)
+    public function __construct(protected Client $client)
     {
-        $this->client = $client;
     }
 }

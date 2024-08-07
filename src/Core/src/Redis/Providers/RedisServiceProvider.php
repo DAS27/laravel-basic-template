@@ -29,17 +29,15 @@ final class RedisServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             Client::class,
-            static function () {
-                return new Client(
-                    [
-                        'url' => config('core.redis.url'),
-                        'host' => config('core.redis.host'),
-                        'password' => config('core.redis.password'),
-                        'port' => config('core.redis.port'),
-                        'database' => config('core.redis.database'),
-                    ]
-                );
-            }
+            static fn () => new Client(
+                [
+                    'url' => config('core.redis.url'),
+                    'host' => config('core.redis.host'),
+                    'password' => config('core.redis.password'),
+                    'port' => config('core.redis.port'),
+                    'database' => config('core.redis.database'),
+                ]
+            )
         );
     }
 

@@ -51,6 +51,14 @@ composer-audit: ## Обнаружить уязвимости в зависимо
 	$(EXEC_PHP) composer audit
 .PHONY: composer-audit
 
+deptrac-layers: var vendor ## Проверить зависимости слоев (https://github.com/sensiolabs-de/deptrac)
+	$(EXEC_PHP) composer deptrac-layers
+.PHONY: deptrac-layers
+
+deptrac-app: var vendor ## Проверить зависимости приложения (https://github.com/sensiolabs-de/deptrac)
+	$(EXEC_PHP) composer deptracapp
+.PHONY: deptrac-dirs
+
 test:
 	$(EXEC_PHP) composer test
 .PHONY: test

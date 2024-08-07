@@ -1,0 +1,145 @@
+deptrac:
+  paths:
+    - ./src
+  exclude_files:
+    - '#.*test.*#'
+  layers:
+    - name: Core
+      collectors:
+        - type: directory
+          regex: src/Core/.*
+
+    - name: Core_Configs
+      collectors:
+        - type: directory
+          regex: src/Core/configs/.*
+
+    - name: Core_Database
+      collectors:
+        - type: directory
+          regex: src/Core/src/Database/.*
+
+    - name: Core_EventDispatcher
+      collectors:
+        - type: directory
+          regex: src/Core/src/EventDispatcher/.*
+
+    - name: Core_Exceptions
+      collectors:
+        - type: directory
+          regex: src/Core/src/Exceptions/.*
+
+    - name: Core_JobDispatcher
+      collectors:
+        - type: directory
+          regex: src/Core/src/JobDispatcher/.*
+
+    - name: Core_Redis
+      collectors:
+        - type: directory
+          regex: src/Core/src/Redis/.*
+
+    - name: Core_Translator
+      collectors:
+        - type: directory
+          regex: src/Core/src/Translator/.*
+
+    - name: Main
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/.*
+
+    - name: Main_Controllers
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Controllers/.*
+
+    - name: Main_Dto
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Dto/.*
+
+    - name: Main_Entities
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Entities/.*
+
+    - name: Main_Events
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Events/.*
+
+    - name: Main_Exceptions
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Exceptions/.*
+
+    - name: Main_Jobs
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Jobs/.*
+
+    - name: Main_Models
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Models/.*
+
+    - name: Main_Repositories
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Repositories/.*
+
+    - name: Main_Resources
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Resources/.*
+
+    - name: Main_Responses
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Responses/.*
+
+    - name: Main_Traits
+      collectors:
+        - type: directory
+          regex: src/Modules/Main/src/Traits/.*
+
+  ruleset:
+    Core:
+      - Main
+    Core_Configs:
+      - Core
+    Core_Database:
+      - Core
+    Core_EventDispatcher:
+      - Core
+    Core_Exceptions:
+      - Core
+    Core_JobDispatcher:
+      - Core
+    Core_Redis:
+      - Core
+    Core_Translator:
+      - Core
+    Main:
+      - Core
+    Main_Controllers:
+      - Main_Dto
+      - Main_Entities
+      - Main_Models
+      - Main_Repositories
+      - Main_Resources
+      - Main_Responses
+    Main_Repositories:
+      - Main_Entities
+      - Main_Models
+    Main_Resources:
+      - Main_Entities
+      - Main_Models
+    Main_Dto:
+      - Main_Entities
+    Main_Events:
+      - Main_Entities
+    Main_Jobs:
+      - Main_Entities
+      - Main_Repositories

@@ -6,14 +6,9 @@ namespace MyProject\Core\JobDispatcher;
 
 use Illuminate\Contracts\Bus\Dispatcher;
 
-final class LaravelJobDispatcher implements JobDispatcherInterface
+final readonly class LaravelJobDispatcher implements JobDispatcherInterface
 {
-    private Dispatcher $dispatcher;
-
-    public function __construct(Dispatcher $dispatcher)
-    {
-        $this->dispatcher = $dispatcher;
-    }
+    public function __construct(private Dispatcher $dispatcher) {}
 
     public function dispatch(BaseJob $job): void
     {
