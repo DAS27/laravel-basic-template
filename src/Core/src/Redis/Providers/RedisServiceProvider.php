@@ -15,6 +15,9 @@ final class RedisServiceProvider extends ServiceProvider
         $this->registerServices();
     }
 
+    /**
+     * @return array<class-string<Client>>
+     */
     public function provides(): array
     {
         return [

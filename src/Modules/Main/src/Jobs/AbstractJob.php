@@ -10,6 +10,9 @@ use Throwable;
 
 abstract class AbstractJob extends BaseJob
 {
+    /**
+     * @param array<string, mixed> $data
+     */
     protected function logInfo(
         LoggerInterface $logger,
         string $title,
@@ -27,6 +30,9 @@ abstract class AbstractJob extends BaseJob
         );
     }
 
+    /**
+     * @param array<string, mixed> $data
+     */
     protected function logError(
         LoggerInterface $logger,
         Throwable $exception,

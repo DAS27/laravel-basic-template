@@ -22,7 +22,8 @@ abstract class AbstractController extends Controller
     /**
      * Success response method.
      *
-     * @param  int  $flags  json_encode() $flags, such as JSON_FORCE_OBJECT
+     * @param array<string, mixed>|Arrayable<string, mixed>|JsonSerializable $result
+     * @param int $flags json_encode() $flags, such as JSON_FORCE_OBJECT
      */
     public function sendResponse(array|Arrayable|JsonSerializable $result, int $status = Response::HTTP_OK, int $flags = 0): JsonResponse
     {
@@ -36,6 +37,8 @@ abstract class AbstractController extends Controller
 
     /**
      * Return error response.
+     *
+     * @param array<string, mixed> $errors
      */
     public function sendError(string $code, string $message, array $errors = [], int $status = Response::HTTP_INTERNAL_SERVER_ERROR): JsonResponse
     {

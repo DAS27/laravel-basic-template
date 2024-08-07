@@ -18,6 +18,9 @@ final class DatabaseServiceProvider extends ServiceProvider
         );
     }
 
+    /**
+     * @return array<class-string<TransactionInterface>>
+     */
     public function provides(): array
     {
         return [

@@ -10,6 +10,7 @@ abstract class AbstractJsonResponse
 {
     protected int $code = 200;
 
+    /** @var array<string, string|string[]> */
     protected array $headers = [];
 
     protected string $wrapKey = 'data';
@@ -25,5 +26,8 @@ abstract class AbstractJsonResponse
         return new JsonResponse($data, $this->code, $this->headers);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     abstract public function getContent(): array;
 }

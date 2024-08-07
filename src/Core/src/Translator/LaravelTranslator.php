@@ -6,16 +6,17 @@ namespace MyProject\Core\Translator;
 
 use Illuminate\Contracts\Translation\Translator;
 
-final class LaravelTranslator implements TranslatorInterface
+final readonly class LaravelTranslator implements TranslatorInterface
 {
-    private Translator $translator;
+    public function __construct(
+        private Translator $translator
+    ) {}
 
-    public function __construct(Translator $translator)
-    {
-        $this->translator = $translator;
-    }
-
-    public function get(string $key, array $replace = [], ?string $locale = null)
+    /**
+     * @param  array<string, mixed>  $replace
+     * @return string|array<string, string>
+     */
+    public function get(string $key, array $replace = [], ?string $locale = null): array|string
     {
         return $this->translator->get($key, $replace, $locale);
     }

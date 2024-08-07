@@ -15,6 +15,9 @@ final class TranslatorServiceProvider extends ServiceProvider
         $this->app->bind(TranslatorInterface::class, LaravelTranslator::class);
     }
 
+    /**
+     * @return array<class-string<TranslatorInterface>>
+     */
     public function provides(): array
     {
         return [

@@ -15,6 +15,9 @@ final class JobDispatcherServiceProvider extends ServiceProvider
         $this->app->bind(JobDispatcherInterface::class, LaravelJobDispatcher::class);
     }
 
+    /**
+     * @return array<class-string<JobDispatcherInterface>>
+     */
     public function provides(): array
     {
         return [

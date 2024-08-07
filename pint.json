@@ -44,5 +44,8 @@
                 "method_private"
             ]
         }
-    }
+    },
+    "exclude": [
+        "src/Modules/Main"
+    ]
 }
